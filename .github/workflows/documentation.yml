@@ -44,16 +44,16 @@ jobs:
       
       - name: Sphinx build
         run: |
-          sphinx-build doc doc/html
-          sphinx-build -M simplepdf doc doc/pdf
-          cp doc/pdf/simplepdf/*.pdf doc/html
-          mv doc/pdf/simplepdf/*.pdf doc/html/mountwizzard4.pdf
+          sphinx-build doc build/html
+          sphinx-build -M simplepdf doc build/pdf
+          cp build/pdf/simplepdf/*.pdf build/html
+          mv build/pdf/simplepdf/*.pdf build/html/MW4_Installer.pdf
           
       - name: check files
         run: |
           ls -la
-          ls -la doc/pdf
-          ls -la doc/html
+          ls -la build/pdf
+          ls -la build/html
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -61,5 +61,5 @@ jobs:
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/html
+          publish_dir: build/html
           force_orphan: true

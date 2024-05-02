@@ -35,7 +35,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'MW4_INstaller'
+project = 'MW4_Installer'
 copyright = '2024, mworion'
 author = 'Michael Würtenberger'
 
