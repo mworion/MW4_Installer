@@ -10,7 +10,7 @@
 # Python-based Tool for interaction with the 10micron mounts
 # GUI with PyQT5 for python
 #
-# written in python3, (c) 2019-2023 by mworion
+# written in python3, (c) 2019-2024 by mworion
 #
 # Licence APL2.0
 #
@@ -35,13 +35,13 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'MountWizzard4'
+project = 'MW4_INstaller'
 copyright = '2024, mworion'
 author = 'Michael Würtenberger'
 
 # The full version, including alpha/beta/rc tags
-version = '4.0.0a1'
-release = '4.0.0a1'
+version = '3.3'
+release = '3.3'
 master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
@@ -73,7 +73,7 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-pdf_documents = [('index', u'MountWizzard4', u'MountWizzard4', u'mworion')]
+pdf_documents = [('index', u'MW4_Installer', u'MW4_Installer', u'mworion')]
 # index - master document
 
 html_theme_options = {
@@ -87,7 +87,7 @@ html_theme_options = {
     'body_bg': '#FFFFFFFF',
 }
 
-simplepdf_file_name = 'mountwizzard4-' + version + '.pdf'
+simplepdf_file_name = 'MW4_Installer-' + version + '.pdf'
 simplepdf_use_weasyprint_api = True
 simplepdf_weasyprint_flags = ['-v']
 simplepdf_vars = {
