@@ -1,11 +1,7 @@
 Welcome to MW4_Installer!
 =========================
-MW4 is a general utility for 10micron users for improving the workflow for astronomy
-work. It runs on Windows11, Windows10 (Win7 should be fine, but it will be not
-tested), Mac OSX (beginning from 10.12 to 14.x) including Mx variants if Rosetta is
-used and Linux (Ubuntu from 16.04 to 22.04). If you have some knowledge around
-Raspberry Pi's and other SOC, you might be able to install MW4 on a RPi3+, RPi4,
-an RPi5.
+MW4_Installer is a general utility for installing MountWizzard4 onto your
+computer.
 
 PDF Documentation:
 
