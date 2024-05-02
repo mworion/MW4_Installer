@@ -80,10 +80,9 @@ def test_mw(c):
 @task(pre=[])
 def build_startup(c):
     printMW('...make zip archive')
-    zipapp.create_archive('./startup/startup.py',
+    zipapp.create_archive('./startup',
                           target='./support/startup.pyz',
-                          compressed=True,
-                          main='startup:main')
+                          compressed=True)
     os.chdir('./support')
     with zipfile.ZipFile('startupPackage.zip', 'w') as myzip:
         myzip.write('startup.pyz')
