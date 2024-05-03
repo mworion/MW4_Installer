@@ -35,8 +35,8 @@ jobs:
   
   install_windows:
     runs-on: windows-latest
-    fail-fast: false
     strategy:
+      fail-fast: false
       matrix:
         include:
           - mw4-version: '3.2.5'
@@ -64,8 +64,8 @@ jobs:
   
   install_ubuntu:
     runs-on: ubuntu-latest
-    fail-fast: false
     strategy:
+      fail-fast: false
       matrix:
         include:
           - mw4-version: '3.2.5'
@@ -101,8 +101,8 @@ jobs:
           
   install_macOS:
     runs-on: macos-latest
-    fail-fast: false
     strategy:
+      fail-fast: false
       matrix:
         include:
           - mw4-version: '3.2.5'
