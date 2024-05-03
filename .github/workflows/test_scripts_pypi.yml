@@ -35,6 +35,7 @@ jobs:
   
   install_windows:
     runs-on: windows-latest
+    fail-fast: false
     strategy:
       matrix:
         include:
@@ -63,6 +64,7 @@ jobs:
   
   install_ubuntu:
     runs-on: ubuntu-latest
+    fail-fast: false
     strategy:
       matrix:
         include:
@@ -99,6 +101,7 @@ jobs:
           
   install_macOS:
     runs-on: macos-latest
+    fail-fast: false
     strategy:
       matrix:
         include:
