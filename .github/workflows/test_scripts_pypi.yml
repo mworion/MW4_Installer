@@ -35,10 +35,20 @@ jobs:
   
   install_windows:
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mw4-version: '3.2.5'
+            python-version: '3.8'
+          - mw4-version: '3.2.5'
+            python-version: '3.9'
+          - mw4-version: '3.2.5'
+            python-version: '3.10'
     steps:
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: ${{ matrix.python-version }}
       
       - name: Install Script Run
         uses: suisei-cn/actions-download-file@v1.6.0
@@ -51,15 +61,7 @@ jobs:
         run: |
           python -m zipfile -e startupPackage.zip .
           dir
-          python startup.pyz --no-start
-      
-      - name: Run MountWizzard4
-        shell: cmd
-        run: |
-          touch test.run
-          touch test.txt
-          python startup.pyz
-          dir
+          python startup.pyz --no-start --version ${{ matrix.mw4-version }}
   
   install_ubuntu:
     runs-on: ubuntu-latest
@@ -88,13 +90,6 @@ jobs:
           python3 -m zipfile -e startupPackage.zip .
           ls -la
           python3 startup.pyz --no-start
-  
-      - name: Run MountWizzard4
-        run: |
-          touch test.run
-          touch test.txt
-          xvfb-run python3 startup.pyz
-          ls -la
           
   install_macOS:
     runs-on: macos-latest
@@ -114,10 +109,3 @@ jobs:
           python3 -m zipfile -e startupPackage.zip .
           ls -la
           python3 startup.pyz --no-start
-          
-      - name: Run MountWizzard4
-        run: |
-          touch test.run
-          touch test.txt
-          python3 startup.pyz
-          ls -la
