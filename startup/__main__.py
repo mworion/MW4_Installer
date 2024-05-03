@@ -27,11 +27,6 @@ addLoggingLevel('HEADER', 55)
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
 
-if platform.system() == 'Windows':
-    py = 'python'
-else:
-    py = 'python3'
-
 
 def read_options() -> argparse.Namespace:
     """
