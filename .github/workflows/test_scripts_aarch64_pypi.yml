@@ -29,14 +29,15 @@ on:
     # Run this action on the trigger event when specific files are touched
     paths:
       - '.github/workflows/test_scripts_aarch64_pypi.yml'
-    # - 'startup/**'
+      - 'startup/**'
+      - 'support/**'
 
 jobs:
   
   install_package_aarch64:
     runs-on: ubuntu-latest
-    name: install_${{ matrix.distro }}_${{ matrix.arch }}
     strategy:
+      fail-fast: false
       matrix:
         include:
           - arch: aarch64
@@ -48,7 +49,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: uraimo/run-on-arch-action@v2
         name: build_artifact
         id: build
@@ -86,10 +86,8 @@ jobs:
           # Produce a binary artifact and place it in the mounted volume
           run: |
             python3 --version
-            ls /root/support/*.*
             cd /root/support
-            python3 startup.pyz --no-start --version 4.0.0a2
+            python3 startup.pyz --no-start --version 3.2.5
             touch test.run
             xvfb-run python3 startup.pyz
             cat log/mw*.log
-            ls -la
