@@ -15,29 +15,12 @@
 #
 ###########################################################
 import os
-import platform
 import tarfile
+import requests
+from packaging.utils import Version
 from startup_logging import log
-from startup_helper import version, install_basic_packages
+from startup_helper import version
 
-if platform.system() == 'Windows':
-    py = 'python'
-else:
-    py = 'python3'
-
-try:
-    import requests
-except ImportError:
-    log.info('Installing basic packages - requests missing')
-    install_basic_packages(python_string=py)
-    import requests
-
-try:
-    from packaging.utils import Version
-except ImportError:
-    log.info('Installing basic packages - packaging missing')
-    install_basic_packages(python_string=py)
-    from packaging.utils import Version
 
 def version_app_online(update_beta: bool) -> Version:
     """
