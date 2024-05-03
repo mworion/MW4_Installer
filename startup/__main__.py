@@ -15,6 +15,7 @@
 #
 ###########################################################
 import sys
+import platform
 import argparse
 from startup import main
 from startup_logging import setupLogging, addLoggingLevel, log
@@ -25,6 +26,11 @@ addLoggingLevel('HEADER', 55)
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
+
+if platform.system() == 'Windows':
+    py = 'python'
+else:
+    py = 'python3'
 
 
 def read_options() -> argparse.Namespace:
@@ -66,6 +72,7 @@ def read_options() -> argparse.Namespace:
 
 
 # here we start the main application
+install_basic_packages(python_string=py)
 options = read_options()
 exit_code = main(options=options)
 sys.exit(exit_code)
