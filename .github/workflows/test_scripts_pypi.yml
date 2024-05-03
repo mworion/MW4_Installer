@@ -60,10 +60,7 @@ jobs:
         shell: cmd
         run: |
           python -m zipfile -e startupPackage.zip .
-          dir
-          pip list
           python startup.pyz --no-start --version ${{ matrix.mw4-version }}
-          pip list
   
   install_ubuntu:
     runs-on: ubuntu-latest
