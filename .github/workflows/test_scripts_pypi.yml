@@ -36,7 +36,6 @@ jobs:
   install_windows:
     runs-on: windows-latest
     strategy:
-      fail-fast: false
       matrix:
         include:
           - mw4-version: '3.2.5'
@@ -64,10 +63,19 @@ jobs:
   
   install_ubuntu:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - mw4-version: '3.2.5'
+            python-version: '3.8'
+          - mw4-version: '3.2.5'
+            python-version: '3.9'
+          - mw4-version: '3.2.5'
+            python-version: '3.10'
     steps:
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: ${{ matrix.python-version }}
       - name: Install Head
         run: |
           sudo apt-get update
@@ -87,15 +95,23 @@ jobs:
       - name: MountWizzard4 Install
         run: |
           python3 -m zipfile -e startupPackage.zip .
-          ls -la
-          python3 startup.pyz --no-start
+          python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
           
   install_macOS:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        include:
+          - mw4-version: '3.2.5'
+            python-version: '3.8'
+          - mw4-version: '3.2.5'
+            python-version: '3.9'
+          - mw4-version: '3.2.5'
+            python-version: '3.10'
     steps:
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Script Install
         uses: suisei-cn/actions-download-file@v1.6.0
@@ -106,5 +122,4 @@ jobs:
       - name: MountWizzard4 Install
         run: |
           python3 -m zipfile -e startupPackage.zip .
-          ls -la
-          python3 startup.pyz --no-start
+          python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
