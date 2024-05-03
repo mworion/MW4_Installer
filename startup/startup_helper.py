@@ -16,6 +16,7 @@
 ###########################################################
 import os
 import subprocess
+from typing import List
 from startup_logging import log
 
 version = '4.0'
@@ -43,7 +44,7 @@ def clean_system(python_string: str = 'python') -> None:
     log.info('Clean system site-packages finished')
 
 
-def run(command) -> bool:
+def run(command: List[str]) -> bool:
     """
     """
     try:
@@ -82,7 +83,5 @@ def install_basic_packages(python_string: str = 'python') -> None:
     command = [python_string, '-m', 'pip', 'install', 'wheel', '--upgrade']
     run(command)
     command = [python_string, '-m', 'pip', 'install', 'packaging', '--upgrade']
-    run(command)
-    command = [python_string, '-m', 'pip', 'list']
     run(command)
     log.info('Basic packages installed')
