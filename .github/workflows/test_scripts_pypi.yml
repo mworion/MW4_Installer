@@ -50,8 +50,8 @@ jobs:
         shell: cmd
         run: |
           python -m zipfile -e startupPackage.zip .
-          python startup.pyz --no-start
           dir
+          python startup.pyz --no-start
       
       - name: Run MountWizzard4
         shell: cmd
@@ -86,8 +86,8 @@ jobs:
       - name: MountWizzard4 Install
         run: |
           python3 -m zipfile -e startupPackage.zip .
-          python3 startup.pyz --no-start
           ls -la
+          python3 startup.pyz --no-start
   
       - name: Run MountWizzard4
         run: |
@@ -112,6 +112,7 @@ jobs:
       - name: MountWizzard4 Install
         run: |
           python3 -m zipfile -e startupPackage.zip .
+          ls -la
           python3 startup.pyz --no-start
           
       - name: Run MountWizzard4
