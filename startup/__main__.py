@@ -17,14 +17,11 @@
 import sys
 import platform
 import argparse
-from startup_logging import setupLogging, addLoggingLevel, log
+from startup_logging import setup_logging, add_logging_level, log
 from startup_helper import install_basic_packages
 
-setupLogging()
-addLoggingLevel('HEADER', 55)
-
-sys.stdout.reconfigure(encoding='utf-8')
-sys.stderr.reconfigure(encoding='utf-8')
+setup_logging()
+add_logging_level('HEADER', 55)
 
 if platform.system() == 'Windows':
     py = 'python'

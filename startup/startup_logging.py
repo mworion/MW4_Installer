@@ -23,7 +23,6 @@ import datetime
 
 
 log = logging.getLogger()
-version = '3.3'
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
 
@@ -58,34 +57,34 @@ class LoggerWriter:
         pass
 
 
-def addLoggingLevel(levelName, levelNum, methodName=None):
+def add_logging_level(level_name, level_num, method_name=None):
     """    
-    :param levelName: 
-    :param levelNum: 
-    :param methodName: 
+    :param level_name:
+    :param level_num:
+    :param method_name:
     :return: 
     """
-    if not methodName:
-        methodName = levelName.lower()
-    if hasattr(logging, levelName):
+    if not method_name:
+        method_name = level_name.lower()
+    if hasattr(logging, level_name):
         return
-    if hasattr(logging, methodName):
+    if hasattr(logging, method_name):
         return
-    if hasattr(logging.getLoggerClass(), methodName):
+    if hasattr(logging.getLoggerClass(), method_name):
         return
 
     def logForLevel(self, message, *args, **kwargs):
-        if self.isEnabledFor(levelNum):
-            self._log(levelNum, message, args, **kwargs)
+        if self.isEnabledFor(level_num):
+            self._log(level_num, message, args, **kwargs)
 
-    logging.addLevelName(levelNum, levelName)
-    setattr(logging, levelName, levelNum)
-    setattr(logging.getLoggerClass(), methodName, logForLevel)
+    logging.addLevelName(level_num, level_name)
+    setattr(logging, level_name, level_num)
+    setattr(logging.getLoggerClass(), method_name, logForLevel)
 
 
-def setupLogging():
+def setup_logging() -> None:
     """
-    setupLogging defines the logger and formats and disables unnecessary
+    setup_logging defines the logger and formats and disables unnecessary
     library logging
 
     :return: true for test purpose
@@ -111,4 +110,3 @@ def setupLogging():
     logging.getLogger('urllib3').setLevel(logging.WARNING)
     # transfer all sys outputs to logging
     # sys.stderr = LoggerWriter(logging.getLogger().error, 'STDERR', sys.stderr)
-    return True

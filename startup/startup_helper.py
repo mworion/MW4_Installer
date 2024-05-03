@@ -43,7 +43,7 @@ def clean_system(python_string: str = 'python') -> None:
     log.info('Clean system site-packages finished')
 
 
-def run(command: list) -> bool:
+def run(command) -> bool:
     """
     """
     try:
@@ -73,7 +73,6 @@ def run(command: list) -> bool:
 
 def install_basic_packages(python_string: str = 'python') -> None:
     """
-    :return:
     """
     prt('...adding basic packages')
     command = [python_string, '-m', 'pip', 'install', 'pip', '--upgrade']
