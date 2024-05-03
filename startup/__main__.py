@@ -17,7 +17,7 @@
 import sys
 import platform
 import argparse
-from startup import main, prt
+from startup import main
 from startup_logging import setupLogging, addLoggingLevel, log
 from startup_helper import install_basic_packages
 
@@ -35,12 +35,14 @@ else:
 try:
     import requests
 except ImportError:
+    log.info('Installing basic packages - requests missing')
     install_basic_packages(python_string=py)
     import requests
 
 try:
     from packaging.utils import Version
 except ImportError:
+    log.info('Installing basic packages - packaging missing')
     install_basic_packages(python_string=py)
     from packaging.utils import Version
 
