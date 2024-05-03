@@ -21,7 +21,7 @@ from startup_logging import log
 version = '4.0'
 
 
-def prt(*args):
+def prt(*args) -> None:
     """
     :param args:
     :return:
@@ -43,7 +43,7 @@ def clean_system(python_string: str = 'python') -> None:
     log.info('Clean system site-packages finished')
 
 
-def run(command: list[str]) -> bool:
+def run(command: list) -> bool:
     """
     """
     try:

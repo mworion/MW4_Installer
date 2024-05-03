@@ -45,9 +45,11 @@ def test_mw(c):
 def build(c):
     printMW('...make zip archive')
     zipapp.create_archive('./startup',
-                          target='./support/startup.pyz')
+                          target='./support/startup.pyz',
+                          compressed=True)
     zipapp.create_archive('./startup',
-                          target='./work/startup.pyz')
+                          target='./work/startup.pyz',
+                          compressed=True)
     os.chdir('./support')
     with zipfile.ZipFile('startupPackage.zip', 'w') as myzip:
         myzip.write('startup.pyz')
