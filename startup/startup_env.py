@@ -55,14 +55,14 @@ class Envbuilder(venv.EnvBuilder):
         os.environ['PATH'] = binPath + os.environ['PATH']
 
 
-def run_python_in_venv(venv_context, command: list[str]) -> bool:
+def run_python_in_venv(venv_context, command) -> bool:
     """
     """
     command = [venv_context.env_exe] + command
     return run(command)
 
 
-def run_bin_in_venv(venv_context, command: list[str]) -> bool:
+def run_bin_in_venv(venv_context, command) -> bool:
     """
     """
     command[0] = str(pathlib.Path(venv_context.bin_path).joinpath(command[0]))
