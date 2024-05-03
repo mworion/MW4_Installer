@@ -1,11 +1,6 @@
 Install on RaspberryPi 3
 ========================
 
-.. hint:: The simplest raspi installation for rpi3 works with astroberry
-
-Installing Python on RPi3
--------------------------
-
 To get MW4 installed on RPi3 you will follow the instructions of Robert Lancaste
 (many thanks to him fore this work!) on https://github.com/rlancaste/AstroPi3 with
 installing AstroPi3 scripts. The installation procedure I describe is based on

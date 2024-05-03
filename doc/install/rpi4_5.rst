@@ -1,7 +1,5 @@
-Install on RaspberryPi 4
-========================
-
-.. hint:: The simplest raspi installation for rpi3 works with astroberry
+Install on RaspberryPi 4/5
+==========================
 
 We are installing MW4 on an ubuntu 20.04.1LTS 64Bit system. In relation to the
 RPi3 it seems to be much simpler to do. Nevertheless some of the big packages will
@@ -11,9 +9,6 @@ install scripts provided.
 
 Another big step forward is that you could use now a virtual environment for
 installing MW4.
-
-Installing Python on RPi4
--------------------------
 
 To get MW4 installed on RPi4 you will follow the instructions of Dustin Casto:
 
@@ -51,23 +46,6 @@ able to compile necessary packages:
     You need to have both packages installed as otherwise the install script or
     later does MW4 not run.
 
+After that, please proceed with the installer script
 
-Using the precompiled wheels
-----------------------------
-Please choose the script fitting to you ubuntu version (18.04.x or 20.04.x)
-The scripts will use precompiled wheels for aarch64 as much as possible to improved
-the installation speed e.g. on your RPi4.
-
-.. code-block:: python
-
-    ./MW4_Install_aarch64_18_04.sh
-
-    or
-
-    ./MW4_Install_aarch64_20_04.sh
-
-After a short while MW4 is installed and should be ready to run like in ubuntu
-installation.
-
-.. note:: The install scripts only support python 3.8-3.9 versions"
 

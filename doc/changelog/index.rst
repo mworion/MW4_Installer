@@ -5,6 +5,11 @@ detailed changes list, please refer to the commit list on GitHub.
 
 Unreleased versions of scripts
 ------------------------------
+4.0
+
+- rewrite an separation to app itself.
+- adding version management
+- better feedback during install
 
 Released versions of scripts
 ----------------------------

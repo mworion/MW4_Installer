@@ -16,10 +16,7 @@ drivers (most likely with the new large scale CMOS cameras), you need to install
 
     python
     mw4
-    astroberry
-    stellarmate64
     rpi3
-    rpi4
+    rpi4_5
     update
     platesolvers
-    example
