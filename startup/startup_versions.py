@@ -27,7 +27,7 @@ if platform.system() == 'Windows':
 else:
     py = 'python3'
 
-install_basic_packages(py)
+install_basic_packages(python_string=py)
 
 
 def version_app_online(update_beta: bool) -> Version:
