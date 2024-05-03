@@ -15,11 +15,19 @@
 #
 ###########################################################
 import os
+import platform
 import tarfile
+from startup_logging import log
+from startup_helper import version, install_basic_packages
+
+if platform.system() == 'Windows':
+    py = 'python'
+else:
+    py = 'python3'
+
+install_basic_packages(python_string=py)
 import requests
 from packaging.version import Version
-from startup_logging import log
-from startup_helper import version
 
 
 def version_app_online(update_beta: bool) -> Version:
