@@ -87,6 +87,7 @@ def read_options() -> argparse.Namespace:
 
 # here we start the main application
 
+install_basic_packages()
 options = read_options()
 exit_code = main(options=options)
 sys.exit(exit_code)
