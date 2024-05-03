@@ -15,9 +15,6 @@
 #
 ###########################################################
 from invoke import task
-from PIL import Image
-import glob
-import time
 import os
 import zipapp
 import zipfile
@@ -36,39 +33,6 @@ def printMW(param):
     print(param)
 
 
-@task
-def version_doc(c):
-    printMW('changing the version number to setup.py')
-
-    # getting version of desired package
-    with open('setup.py', 'r') as setup:
-        text = setup.readlines()
-
-    for line in text:
-        if line.strip().startswith('version'):
-            _, number, _ = line.split("'")
-
-    # reading configuration file
-    with open('./doc/source/conf.py', 'r') as conf:
-        text = conf.readlines()
-    textNew = list()
-
-    print(f'version is >{number}<')
-
-    # replacing the version number
-    for line in text:
-        if line.startswith('version'):
-            line = f"version = '{number}'\n"
-        if line.startswith('release'):
-            line = f"release = '{number}'\n"
-        textNew.append(line)
-
-    # writing configuration file
-    with open('./doc/source/conf.py', 'w+') as conf:
-        conf.writelines(textNew)
-    printMW('changing the version number to setup.py finished\n')
-
-
 @task()
 def test_mw(c):
     printMW('testing mountwizzard4')
@@ -78,10 +42,13 @@ def test_mw(c):
 
 
 @task(pre=[])
-def build_startup(c):
+def build(c):
     printMW('...make zip archive')
     zipapp.create_archive('./startup',
                           target='./support/startup.pyz',
+                          compressed=True)
+    zipapp.create_archive('./startup',
+                          target='./work/startup.pyz',
                           compressed=True)
     os.chdir('./support')
     with zipfile.ZipFile('startupPackage.zip', 'w') as myzip:

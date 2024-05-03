@@ -53,6 +53,7 @@ def run(command: list[str]) -> bool:
                                    text=True)
         for stdout_line in iter(process.stdout.readline, ""):
             if stdout_line:
+                print(stdout_line)
                 log.info(stdout_line.strip('\n'))
         output = process.communicate(timeout=60)[0]
 
@@ -82,5 +83,7 @@ def install_basic_packages(python_string: str = 'python') -> None:
     command = [python_string, '-m', 'pip', 'install', 'wheel', '-U']
     run(command)
     command = [python_string, '-m', 'pip', 'install', 'packaging', '-U']
+    run(command)
+    command = [python_string, '-m', 'pip', 'list']
     run(command)
     log.info('Basic packages installed')

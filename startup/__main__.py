@@ -17,7 +17,6 @@
 import sys
 import platform
 import argparse
-from startup import main
 from startup_logging import setupLogging, addLoggingLevel, log
 from startup_helper import install_basic_packages
 
@@ -31,6 +30,9 @@ if platform.system() == 'Windows':
     py = 'python'
 else:
     py = 'python3'
+
+install_basic_packages(python_string=py)
+from startup import main
 
 
 def read_options() -> argparse.Namespace:
@@ -72,7 +74,6 @@ def read_options() -> argparse.Namespace:
 
 
 # here we start the main application
-install_basic_packages(python_string=py)
 options = read_options()
 exit_code = main(options=options)
 sys.exit(exit_code)
