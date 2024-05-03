@@ -15,7 +15,6 @@
 #
 ###########################################################
 import sys
-import platform
 import argparse
 from startup import main
 from startup_logging import setupLogging, addLoggingLevel, log
@@ -26,25 +25,6 @@ addLoggingLevel('HEADER', 55)
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
-
-if platform.system() == 'Windows':
-    py = 'python'
-else:
-    py = 'python3'
-
-try:
-    import requests
-except ImportError:
-    log.info('Installing basic packages - requests missing')
-    install_basic_packages(python_string=py)
-    import requests
-
-try:
-    from packaging.utils import Version
-except ImportError:
-    log.info('Installing basic packages - packaging missing')
-    install_basic_packages(python_string=py)
-    from packaging.utils import Version
 
 
 def read_options() -> argparse.Namespace:
