@@ -46,7 +46,7 @@ def install_app(venv_context, version='', is_test=False):
     return suc
 
 
-def check_if_installed(venv_context) -> tuple[bool, str]:
+def check_if_installed(venv_context) -> tuple:
     """
     """
     app_loader_search_path = venv_context.env_dir + '/lib/**/mw4/loader.py'
