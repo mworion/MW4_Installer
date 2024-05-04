@@ -1,3 +1,6 @@
+Display configuration
+=====================
+
 DPI scaling on Windows
 ----------------------
 If you are running a windows machine with setting the zoom factor for you display

@@ -54,4 +54,5 @@ flawless.
     install/rpi3
     install/rpi4_5
     config/configure
+    config/commandline
     changelog/changelog
