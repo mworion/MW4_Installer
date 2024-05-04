@@ -25,8 +25,8 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
     """
     """
     preRepo = 'https://github.com/mworion/MW4_Installer'
-    preSource = '/blob/main/wheels/'
-    postRepo = '?raw=true'
+    preSource = '/raw/main/wheels/'
+    postRepo = ''
     wheels = {
         '2.0.0': {
             '3.8': [
