@@ -47,14 +47,9 @@ jobs:
       matrix:
         include:
           - arch: aarch64
-            distro: ubuntu20.04
-            python: python3.9
-          - arch: aarch64
             distro: ubuntu22.04
-            python: python3.9
           - arch: aarch64
             distro: bullseye
-            python: python3.9
 
     steps:
       - uses: actions/checkout@v4
@@ -84,7 +79,6 @@ jobs:
           install: |
             apt-get update -y
             apt-get upgrade -y
-            apt-get install -y ${{ matrix.python }}
             apt-get -y install python3-dev python3-pip python3-venv python3-wheel
             apt-get install -y xvfb libxkbcommon-x11-0 x11-utils libxcb-icccm4
             apt-get install -y libxcb-image0 libxcb-keysyms1 libxcb-randr0
@@ -94,9 +88,9 @@ jobs:
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
-            ${{ matrix.python }} --version
+            python3 --version
             cd /root/support
-            ${{ matrix.python }} startup.pyz --no-start --version 3.2.5
+            python3 startup.pyz --no-start --version 3.2.5
 
       - name: Show the artifact
         # Items placed in /artifacts in the container will be in
