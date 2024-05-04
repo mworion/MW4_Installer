@@ -3,8 +3,14 @@ MW4_Installer
 
 Documentation:
 --------------
-There is a documentation available for MW4:
+There is a documentation available for MW4_Installer:
+
 https://mworion.github.io/MW4_Installer/index.html
+
+and MountWizzard4 itself:
+
+https://mworion.github.io/MountWizzard4/index.html
+
 
 Changelog:
 
@@ -13,11 +19,15 @@ https://mworion.github.io/MW4_Installer/changelog/index.html
 
 Feedback discussions and issue reports:
 ---------------------------------------
-Please report your issues: https://github.com/mworion/MW4_Installer/issues.
+Please report your issues:
+
+https://github.com/mworion/MW4_Installer/issues.
+
 Please have a good description (maybe a screenshot if it‘s related to GUI) and
 add the log file(s) to the issue. Any feedback welcome!
 
 Please feel free to start any discussion:
+
 https://github.com/mworion/MW4_Installer/discussions
 
 
