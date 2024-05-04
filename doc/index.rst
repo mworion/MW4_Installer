@@ -12,11 +12,11 @@ To improve quality and usability any feedback is highly welcome! To maintain a
 good transparency and professional work for my, please respect the following
 recommendations how to feed back.
 
-.. note:: Please report issues / bugs here:
+.. hint:: Please report issues / bugs here:
 
           https://github.com/mworion/MW4_Installer/issues.
 
-.. note:: Feature requests and discussions or for all other topics of interest
+.. hint:: Feature requests and discussions or for all other topics of interest
           there is a good place to start here:
 
           https://github.com/mworion/MW4_Installer/discussions
