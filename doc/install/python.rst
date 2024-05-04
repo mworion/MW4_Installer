@@ -1,5 +1,5 @@
-Install Python
-==============
+Install Python on your computer
+===============================
 MountWizzard4 is a python3 application based on some python libraries and uses
 Qt5/6 as framework for GUI. Different to past versions of MountWizzard4 there
 will be no one box solution (MAC bundle, EXE File, etc.) available. As
@@ -34,8 +34,8 @@ There is a video on youtube with the install process python: https://youtu.be/xJ
     windows. On other OS there is no need for doing that.
 
 
-Windows
--------
+Windows Platform
+----------------
 .. warning::
     Windows makes a hard split between 32bit and 64bit versions. If your drivers
     and setup uses 64bit solutions, please install 64bit python!
@@ -57,8 +57,8 @@ and follow the installation procedure.
 Depending on your preference you could install python3 for a single user or
 for all users. MountWizzard4 does not need admin rights to run!
 
-Mac OSx
--------
+Mac OSx platform
+----------------
 Depending on your OSx version please download the installer for python3 from:
 
 https://www.python.org/downloads/mac-osx/
@@ -71,8 +71,8 @@ to run!
     experience with these setups. Actually MountWizzard4 only support Intel
     architecture so you need to use the Rosetta emulator.
 
-Ubuntu
-------
+Ubuntu platform
+---------------
 Referring to Ubuntu 20.04 LTS as it comes with python3.8. This should work, but
 you could upgrade to a newer python3 version. This could be done by adding an
 appropriate repo, which enables this version.
@@ -112,7 +112,7 @@ standard procedure.
 
 
 Update python version on your windows computer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------
 Please go to the python website an download the appropriate python version. On
 windows please check the selection of the 32bit or 64bit correctly. It should be
 the version you have already chosen.

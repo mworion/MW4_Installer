@@ -7,11 +7,12 @@
 #    #  ##  #  ##  ##    ######
 #   #   #   #  #   #       #
 #
-# Python-based Tool for interaction with the 10micron mounts
-# GUI with PyQT5 for python
+# Installer for MountWizzard4
+#
+# a Python-based Tool for interaction with the
+# 10micron mounts GUI with PyQT5/6
 #
 # written in python3, (c) 2019-2024 by mworion
-#
 # Licence APL2.0
 #
 ###########################################################
@@ -40,8 +41,8 @@ copyright = '2024, mworion'
 author = 'Michael Würtenberger'
 
 # The full version, including alpha/beta/rc tags
-version = '3.3'
-release = '3.3'
+version = '4.0.0'
+release = '4.0.0'
 master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
@@ -51,7 +52,7 @@ master_doc = 'index'
 # ones.
 extensions = ['sphinx.ext.autosectionlabel',
               'sphinx.ext.githubpages', 'sphinxcontrib.drawio',
-              'sphinx_simplepdf']
+              'sphinx_simplepdf', 'sphinx_copybutton']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
