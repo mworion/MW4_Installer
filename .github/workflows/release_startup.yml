@@ -1,0 +1,63 @@
+############################################################
+# -*- coding: utf-8 -*-
+#
+#  o-o   o--o  o   o  o-o
+#  |  \  |   | |   | |
+#  |   O O--o  |   |  o-o
+#  |  /  |   | |   |     |
+#  o-o   o--o   o-o  o--o
+#
+#
+#   o-o  o--o o--o  o     o-o   o-o
+#  |     |    |   | |    o   o |
+#   o-o  O-o  O--o  |    |   |  o-o
+#      | |    |     |    o   o     |
+#  o--o  o--o o     O---o o-o  o--o
+#
+# python-based service for victron cerbo > v3.00
+#
+# (c) 2024 by mworion
+# Licence MIT
+#
+###########################################################
+
+name: release_startup
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+  
+on:
+  push:
+    tags:
+      # do not match pre release
+      # matches:
+      # v1.0.0
+      # v1.0.123
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  build_zip_archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{env.branch}}
+          
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+          
+      - name: build_artifact
+        run: |
+          python3 -m zipapp startup -o support/startup.pyz
+          cd support
+          ls -la
+          python3 -m zipfile -c startup_package.zip startup.pyz mw4.ico mw4.png MountWizzard4.desktop
+          ls -la
+          
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: support/startup_package.zip

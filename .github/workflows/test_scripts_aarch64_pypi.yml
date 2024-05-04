@@ -97,4 +97,3 @@ jobs:
         # ${PWD}/artifacts on the host.
         run: |
           ls -la "${PWD}/support"
-          cat "${PWD}/support/log/mw4*.log"
