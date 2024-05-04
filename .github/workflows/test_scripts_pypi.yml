@@ -30,7 +30,10 @@ on:
     paths:
       - '.github/workflows/test_scripts_pypi.yml'
       - 'support/**'
-
+  workflow_run:
+    workflows: ['build_startup']
+    types: [completed]
+    
 jobs:
   
   install_windows:

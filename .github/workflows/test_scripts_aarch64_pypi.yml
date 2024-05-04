@@ -30,6 +30,9 @@ on:
     paths:
       - '.github/workflows/test_scripts_aarch64_pypi.yml'
       - 'support/**'
+  workflow_run:
+    workflows: ['build_startup']
+    types: [completed]
 
 jobs:
   
