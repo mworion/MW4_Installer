@@ -46,7 +46,7 @@ jobs:
           
       - name: build_artifact
         run: |
-          python3 -m zipapp startup -m -o support/startup.pyz
+          python3 -m zipapp startup -o support/startup.pyz
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
