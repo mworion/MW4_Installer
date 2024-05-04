@@ -1,5 +1,5 @@
-Install Python on your computer
-===============================
+Install Python3
+===============
 MountWizzard4 is a python3 application based on some python libraries and uses
 Qt5/6 as framework for GUI. Different to past versions of MountWizzard4 there
 will be no one box solution (MAC bundle, EXE File, etc.) available. As
