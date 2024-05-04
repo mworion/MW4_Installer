@@ -94,3 +94,10 @@ jobs:
             touch test.run
             xvfb-run python3 startup.pyz
             cat log/mw*.log
+
+      - name: Show the artifact
+        # Items placed in /artifacts in the container will be in
+        # ${PWD}/artifacts on the host.
+        run: |
+          ls -al "${PWD}/support"
+          cat "${PWD}/support/log/mw*.log"
