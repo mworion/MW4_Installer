@@ -68,7 +68,6 @@ jobs:
         shell: cmd
         run: |
           python startup.pyz --no-start --version ${{ matrix.mw4-version }}
-          type log/*.log
   
   install_ubuntu:
     runs-on: ubuntu-latest
@@ -113,7 +112,6 @@ jobs:
       - name: MountWizzard4 Install
         run: |
           python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
-          cat log/*.log
           
   install_macOS:
     runs-on: macos-13
@@ -149,4 +147,3 @@ jobs:
       - name: MountWizzard4 Install
         run: |
           python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
-          cat log/*.log
