@@ -99,4 +99,4 @@ jobs:
         # ${PWD}/artifacts on the host.
         run: |
           ls -la "${PWD}/support"
-          cat "${PWD}/support/log/*.log"
+          ls -la "${PWD}/support/log"
