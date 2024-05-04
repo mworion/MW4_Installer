@@ -32,7 +32,7 @@ on:
       - 'startup/**'
 
 jobs:
-  install_package_aarch64:
+  build_zip_archive:
     runs-on: ubuntu-latest
 
     steps:
@@ -46,6 +46,9 @@ jobs:
           
       - name: build_artifact
         run: |
-          python3 -m pip install pip --upgrade
-          python3 -m pip install zipapp
           python3 -m zipapp startup -m -o support/startup.pyz
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'build startup artifact'
+          branch: ${{env.branch}}
