@@ -33,45 +33,85 @@ Installing with installer version 4.x:
 --------------------------------------
 The install procedure also got improved: You will have only a single compressed
 python script (startup.pyz) which is valid for all platforms and does all things
-the different existing scripts stand for. Please download the package and unzip
-it to get the content. You will find three files:
+the different existing scripts stand for. Additionally some support files are
+present to make for Linux a good starter Please download the package and unzip
+it to get the content. You will find four files:
 
 - startup.pyz -> the script for doing all the work
 - mountwizzard4.desktop -> support for ubuntu / linux running the script
 - mw4.png -> icon for mountwizzard4.desktop
 - mw4.ico -> icon to customize the link in windows for running the script
 
-https://github.com/mworion/MW4_Installer/blob/master/support/startupPackage.zip?raw=true
+Process for installation
+------------------------
 
+Step 1
+------
+Please create a working directory of your choice and location. For MacOSx I
+would recommend not using a location on the desktop as it might cause troubles
+with execution right in newer OSx installations. The directory can be renamed
+later on, it also can also be moved to any other location. Copy the scripts for
+your platform into this directory.
 
-On windows you should be able to start the script just be double click on it,
-in all other platforms you start it with:
+Step 2
+------
+Download the **lastest** release of the installer script and unzip it's content
+to your work dir. You will find it here:
+https://github.com/mworion/MW4_Installer/releases
 
-.. code-block:: python
+In Windows10 for the first time you might be asked again for permission.
 
-    python3 startup.pyz
-
-On windows please use the command:
-
-.. code-block:: python
-
-    python startup.pyz
-
-.. warning::
-    The new script 4.x supports multiple platforms (Windows, MacOSx, ARM and x86
-    Linux distributions! Still for some you need to do some preparations.
-
-
-Downloading the zip files
--------------------------
-Please click the link and press download from the page:
-
-.. image:: image/scripts.png
+.. image:: image/win_a.png
     :align: center
     :scale: 71%
 
-There is a video on youtube with the install process for Mac:
-https://youtu.be/xJxpx_SmrVc.
+Please accept this and follow the step the install marked in red.
+
+.. image:: image/win_b.png
+    :align: center
+    :scale: 71%
+
+Step 3
+------
+Run the installer script, on windows you should be able to start the script just
+be double click on it, in all other platforms you start it with:
+
+.. code-block:: python
+
+    python startup.pyz  # Windows
+    python3 startup.pyz # Ubuntu and OSx
+
+This script will prepare an virtual environment, install all necessary libraries
+- if applicable for arm plattforms (RPi's) also precompiled wheels and
+MountWizzard4 itself. After a successful installation, the script will start
+MountWizzard4 the first time. During this first run MountWizzard4 will create
+some subdirectories in your working folder. When starting, a splash screen shows
+the progress of it's initialization. After first start the directory should
+look like (example Windows)
+
+
+Remarks for installation
+------------------------
+MountWizzard4 is installed inside the virtual environment venv in your work dir.
+Once installed, the startup.pyz script is also used for starting MountWizzard4
+at any time.
+
+.. hint::
+    Please check if an online connection is available on your computer during
+    installation as the libraries and MountWizzard4 is installed from online
+    sources.
+
+.. hint::
+    Over time, there might be some improvements also made for these scripts.
+    So if you had installed MountWizzard4 some time ago and will install new
+    setups, it might be helpful to check if some new scripts are available for
+    better handling. When running the script, it will check for updates and
+    gives you some hints.
+
+.. hint::
+    The new script 4.x supports multiple platforms (Windows, MacOSx, ARM and x86
+    Linux distributions! Still for some you need to do some preparations.
+
 
 Short videos for installation
 -----------------------------
@@ -86,81 +126,10 @@ special videos showing a installation on different platforms.
     * Ubuntu 18.04: https://youtu.be/kNfLrtJtkq8
 
 
-Step 1
-------
 
-Please create a working directory of your choice and location. For MacOSx I would
-recommend not using a location on the desktop as it might cause troubles with
-execution right in newer OSx installations. The directory can be renamed later on,
-it also can also be moved to any other location. Copy the scripts for your
-platform into this directory.
-
-.. hint::
-    Over time, there might be some improvements also made for these scripts.
-    So if you had installed MountWizzard4 some time ago and will install new setups,
-    it might be helpful to check if some new scripts are available for better
-    handling.
-
-the directory should than for OSx look like:
-
-
-Step 2
-------
-
-Download the actual release of the installer script and unzip it's content to
-your work dir.
-
-
-In Windows10 for the first time you might be asked again for permission (see above).
-
-Please use for the following step the install marked in red.
-
-MountWizzard4 is already installed inside the virtual environment venv in your work dir.
-
-.. warning::
-    Please check if an online connection is available on your computer during
-    installation as the libraries and MountWizzard4 is installed from online sources.
-
-Step 3
-------
-
-Run the installer script
-
-.. code-block:: python
-
-    MW4_Run.bat         # Windows
-    MW4_Run.sh          # Ubuntu
-    MW4_Run.command     # OSx
-
-This script will start MountWizzard4 for the first time and it will create some
-subdirectories in your working folder. When starting, a splash screen show the
-progress of it's initialization. After first start the directory should for OSx
-look like:
-
-.. image:: image/mac_3.png
-    :align: center
-    :scale: 71%
-
-In Windows10 it looks like:
-
-.. image:: image/win_3.png
-    :align: center
-    :scale: 71%
-
-In Windows10 for the first time you might be asked again for permission (see above).
-
-With the first run you will see a log file written and you should have a first
-window from MountWizzard4 open. Please notice that there will be no visible
-terminal window,
-but a minimized power shell in the menu. This might take some seconds before MountWizzard4
-comes up with the splash screen:
-
-.. image:: image/first_run.png
-    :align: center
-    :scale: 71%
-
-If you see the upper window, you succeed and from now on you are able to customize your
-setup of MountWizzard4 and it's features.
+If you see the upper window, you succeed and from now on you are able to
+customize your setup of MountWizzard4 and it's features. Please refer to the
+MountWizzard4 documentation for further information.
 
 Setting up Ubuntu
 -----------------
@@ -176,79 +145,5 @@ Unfortunately this is broken un Ubuntu 20.04LTS, see (including the workaround):
 
 https://askubuntu.com/questions/1231413/basic-desktop-actions-are-not-available-on-ubuntu-20-04
 
-If you install nemo (hint as workaround) as file manager, the desktop icons will work.
-
-DPI scaling on Windows
-----------------------
-If you are running a windows machine with setting the zoom factor for you display
-settings different to 100%, you might notice inadequate font sizes etc.
-Unfortunately this could not be worked around within MountWizzard4 itself, but you could
-change some environment variables to omit this problem. The actual script already
-contain some setting to keep the resolution to 100% even if you choose to increase
-this value for other applications. You want to play with these settings to make
-the appearance correct:
-
-.. code-block:: python
-
-    SET QT_SCALE_FACTOR=1
-    SET QT_FONT_DPI=96
-
-Here some examples of the settings: Normal scaling (scale = 1, dpi = 96)
-
-.. image:: image/scale_normal.png
-    :align: center
-    :scale: 71%
-
-Small fonts (scale = 1, dpi = 48)
-
-.. image:: image/scale_dpi48.png
-    :align: center
-    :scale: 71%
-
-Bigger scale (scale = 1.5, dpi = 96)
-
-.. image:: image/scale_1_5.png
-    :align: center
-    :scale: 71%
-
-If you would like to have MountWizzard4 displayed bigger than 100%, please increase the
-QT_SCALE_FACTOR to the value desired. A value of 1 means 100%, so 2 means 200%.
-You will experience to set the font adequately.
-
-
-DPI scaling on Ubuntu
----------------------
-This is quite similar to windows. You have to set the environment variables
-QT_SCALE_FACTOR and QT_FONT_DPI accordingly. They are already part of the
-MW4_Run.sh scripts.
-
-
-Installation on Apple Silicon
------------------------------
-For software that is not yet updated, Apple has built in translation software
-called Rosetta 2. Rosetta 2 will interpret  traditional Intel-based code and make
-it look like ARM-based code. And it does this pretty well. Generally speaking as a
-user it is very difficult to distinguish between apps that have ‘native M1
-support’ to traditional Intel-based apps.
-
-But for any apps that are run from the command-line in Terminal, this standard
-Rosetta 2 translation does not happen. Within Astrophotography it is not uncommon
-to have apps that run from the command-line. Please hav a look to:
-https://www.astroworldcreations.com/blog/apple-silicon-and-legacy-command-line-software
-
-Update manually
----------------
-If you plan to upgrade MountWizzard4 to the newest release, MountWizzard4 has it's own internal
-updater and using the script is not necessary. In some circumstances this might
-be necessary. In these cases you could use on of the
-
-.. code-block:: python
-
-    MW4_Update.bat         # Windows
-    MW4_Update.sh          # Ubuntu
-    MW4_Update.command     # OSx
-
-scripts. The command script updates to the latest release.
-
-.. note:: You only could update to official releases. Beta's are not supported.
-
+If you install nemo (hint as workaround) as file manager, the desktop icons will
+work.
