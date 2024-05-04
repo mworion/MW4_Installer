@@ -17,10 +17,12 @@
 
 name: documentation
 
-on: [push, workflow_dispatch]
-
-permissions:
-  contents: write
+on:
+  push:
+    # Run this action on the trigger event when specific files are touched
+    paths:
+      - '.github/workflows/documentation.yml'
+      - 'doc/**'
 
 jobs:
   documentation:

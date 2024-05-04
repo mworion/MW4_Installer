@@ -1,0 +1,51 @@
+############################################################
+# -*- coding: utf-8 -*-
+#
+#       #   #  #   #   #    #
+#      ##  ##  #  ##  #    #
+#     # # # #  # # # #    #  #
+#    #  ##  #  ##  ##    ######
+#   #   #   #  #   #       #
+#
+# Python-based Tool for interaction with the 10micron mounts
+# GUI with PyQT5 for python3
+#
+# written in python3, (c) 2019-2024 by mworion
+# Licence APL2.0
+#
+###########################################################
+
+name: build_startup
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  branch: 'main'
+
+on:
+  push:
+    # Run this action on the trigger event when specific files are touched
+    paths:
+      - '.github/workflows/build_startup.yml'
+      - 'startup/**'
+
+jobs:
+  install_package_aarch64:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{env.branch}}
+          
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+          
+      - name: build_artifact
+        run: |
+          python3 -m pip install pip --upgrade
+          python3 -m pip install zipapp
+          python3 -m zipapp startup -m -o support/startup.pyz
