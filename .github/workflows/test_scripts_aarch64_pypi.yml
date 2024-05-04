@@ -51,7 +51,7 @@ jobs:
             python: python3.9
           - arch: aarch64
             distro: ubuntu22.04
-            python: python3.10
+            python: python3.9
           - arch: aarch64
             distro: bullseye
             python: python3.9
@@ -94,9 +94,9 @@ jobs:
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
-            python3 --version
+            ${{ matrix.python }} --version
             cd /root/support
-            python3 startup.pyz --no-start --version 3.2.5
+            ${{ matrix.python }} startup.pyz --no-start --version 3.2.5
 
       - name: Show the artifact
         # Items placed in /artifacts in the container will be in
