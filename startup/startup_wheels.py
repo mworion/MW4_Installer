@@ -108,7 +108,6 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
     for item in wheels[versionKey][ver]:
         prt(f'...{item.split("-")[0]}-{item.split("-")[1]}')
         command = ['-m', 'pip', 'install', preRepo + preSource + item + postRepo]
-        log.info(f'Install precompiled package: {command}')
         suc = run_python_in_venv(venv_context, command)
         if not suc:
             prt('...error install precompiled packages')

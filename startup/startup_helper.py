@@ -53,6 +53,7 @@ def run(command) -> bool:
                                    text=True)
         for stdout_line in iter(process.stdout.readline, ""):
             if stdout_line:
+                prt(stdout_line.strip('\n'))
                 log.info(stdout_line.strip('\n'))
         output = process.communicate(timeout=60)[0]
 
