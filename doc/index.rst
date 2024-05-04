@@ -1,4 +1,4 @@
-Welcome to MW4_Installer!
+Welcome to MW4 Installer!
 =========================
 MW4_Installer is a general utility for installing and starting MountWizzard4 on
 your computer and it comes also with an PDF documentation:
@@ -35,7 +35,7 @@ closed issues on GitHub.
 
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
     install/index
     changelog/index

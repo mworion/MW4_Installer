@@ -11,7 +11,7 @@ install 64bit python as well as windows does not mix both variants flawless.
              functionality.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     python
     mw4

@@ -1,4 +1,4 @@
-MW4_Installer
+MW4 Installer
 =============
 
 Documentation:
