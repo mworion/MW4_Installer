@@ -96,5 +96,5 @@ jobs:
         # Items placed in /artifacts in the container will be in
         # ${PWD}/artifacts on the host.
         run: |
-          ls -al "${PWD}/support"
-          cat "${PWD}/support/log/mw*.log"
+          ls -la "${PWD}/support"
+          cat "${PWD}/support/log/*.log"
