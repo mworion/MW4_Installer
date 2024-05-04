@@ -24,8 +24,8 @@ from startup_env import run_python_in_venv
 def download_and_install_wheels(venv_context, version: Version) -> bool:
     """
     """
-    preRepo = 'https://github.com/mworion/MountWizzard4'
-    preSource = '/blob/master/support/wheels/'
+    preRepo = 'https://github.com/mworion/MW4_Installer'
+    preSource = '/blob/main/wheels/'
     postRepo = '?raw=true'
     wheels = {
         '2.0.0': {

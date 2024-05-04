@@ -48,7 +48,8 @@ jobs:
         run: |
           python3 -m zipapp startup -o support/startup.pyz
           cd support
-          python3 -m zipfile startup_package.zip startup.pyz mw4.ico mw4.png MountWizzard4.desktop
+          ls -la
+          python3 -m zipfile -c startup_package.zip startup.pyz mw4.ico mw4.png MountWizzard4.desktop
           ls -la
 
       - uses: stefanzweifel/git-auto-commit-action@v5
