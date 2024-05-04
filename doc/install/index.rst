@@ -1,5 +1,3 @@
-Installing
-==========
 If you on the way of installing MW4 to your windows system, please be aware of
 the 32bit / 64bit limitations of ASCOM / drivers and python. If you are using
 64bit drivers (most likely with the new large scale CMOS cameras), you need to
