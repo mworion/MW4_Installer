@@ -26,7 +26,7 @@ from startup_env import run_python_in_venv
 def download_and_install_wheels(venv_context, version: Version) -> bool:
     """
     """
-    preRepo = 'https://github.com/mworion/MW4_Installer'
+    preRepo = 'https://github.com/mworion/InstallerMW4'
     preSource = '/raw/main/wheels/'
     postRepo = ''
     wheels = {

@@ -57,7 +57,7 @@ Step 2
 ------
 Download the **lastest** release of the installer script and unzip it's content
 to your work dir. You will find it here:
-https://github.com/mworion/MW4_Installer/releases
+https://github.com/mworion/InstallerMW4/releases
 
 In Windows10 for the first time you might be asked again for permission.
 

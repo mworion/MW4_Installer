@@ -36,7 +36,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'MW4 Installer'
+project = 'InstallerMW4'
 copyright = '2024, mworion'
 author = 'Michael Würtenberger'
 
@@ -74,7 +74,7 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-pdf_documents = [('index', u'MW4_Installer', u'MW4_Installer', u'mworion')]
+pdf_documents = [('index', u'InstallerMW4', u'InstallerMW4', u'mworion')]
 # index - master document
 
 html_theme_options = {
@@ -88,7 +88,7 @@ html_theme_options = {
     'body_bg': '#FFFFFFFF',
 }
 
-simplepdf_file_name = 'MW4_Installer-' + version + '.pdf'
+simplepdf_file_name = 'InstallerMW4-' + version + '.pdf'
 simplepdf_use_weasyprint_api = True
 simplepdf_weasyprint_flags = ['-v']
 simplepdf_vars = {

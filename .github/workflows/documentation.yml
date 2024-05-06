@@ -51,7 +51,7 @@ jobs:
           sphinx-build doc build/html
           sphinx-build -M simplepdf doc build
           cp build/simplepdf/*.pdf build/html
-          mv build/simplepdf/*.pdf build/html/MW4_Installer.pdf
+          mv build/simplepdf/*.pdf build/html/InstallerMW4.pdf
           
       - name: check files
         run: |

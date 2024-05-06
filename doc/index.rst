@@ -1,9 +1,9 @@
-Welcome to MW4_Installer!
+Welcome to InstallerMW4!
 =========================
-MW4_Installer is a general utility for installing and starting MountWizzard4 on
+InstallerMW4 is a general utility for installing and starting MountWizzard4 on
 your computer and it comes also with an PDF documentation:
 
-https://mworion.github.io/MW4_Installer/MW4_Installer.pdf
+https://mworion.github.io/InstallerMW4/InstallerMW4.pdf
 
 Before starting
 ---------------
@@ -14,12 +14,12 @@ recommendations how to feed back.
 
 .. hint:: Please report issues / bugs here:
 
-          https://github.com/mworion/MW4_Installer/issues.
+          https://github.com/mworion/InstallerMW4/issues.
 
 .. hint:: Feature requests and discussions or for all other topics of interest
           there is a good place to start here:
 
-          https://github.com/mworion/MW4_Installer/discussions
+          https://github.com/mworion/InstallerMW4/discussions
 
 
 In case of a bug report please have a good description (maybe a screenshot if it‘s

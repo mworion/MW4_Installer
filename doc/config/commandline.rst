@@ -1,6 +1,6 @@
 Command line options
 ====================
-MW4_Installer supports a number of command line options to allow for automated
+InstallerMW4 supports a number of command line options to allow for automated
 installation and updating of MountWizzard4. You could check them by running
 
 .. code-block:: bash
