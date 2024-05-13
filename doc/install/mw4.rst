@@ -2,7 +2,7 @@ Install MountWizzard4
 =====================
 
 When starting with the installation of MountWizzard4, python 3.8-3.10 for
-versions 3.x and python 3.9-3.12 for versions 4.x should be successful installed.
+versions 3.x and python 3.10-3.12 for versions 4.x should be successful installed.
 To check, open a terminal (available on all platforms) and run the command
 
 .. code-block:: python

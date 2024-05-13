@@ -74,7 +74,7 @@ def install(venv_context, beta: bool = False, version_string: str = '') -> str:
     version_python = Version(platform.python_version())
     compatibleV2 = version_python < Version('3.10')
     compatibleV3 = Version('3.8') <= version_python < Version('3.11')
-    compatibleV4 = Version('3.9') <= version_python < Version('3.13')
+    compatibleV4 = Version('3.10') <= version_python < Version('3.13')
 
     if isV2 and not compatibleV2:
         prt('MountWizzard4 v2.x needs python 3.7-3.9')
@@ -87,8 +87,8 @@ def install(venv_context, beta: bool = False, version_string: str = '') -> str:
         return ''
 
     if isV4 and not compatibleV4:
-        prt('MountWizzard4 v4.x needs python 3.9-3.12')
-        log.error('MountWizzard4 v4.x needs python 3.9-3.12')
+        prt('MountWizzard4 v4.x needs python 3.10-3.12')
+        log.error('MountWizzard4 v4.x needs python 3.10-3.12')
         return ''
 
     if platform.machine() == 'aarch64':
