@@ -70,20 +70,6 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
                 'PyQt5-5.15.9-cp38.cp39.cp310-abi3-manylinux_2_17_aarch64.whl',
             ],
         },
-        '4.0.0': {
-            '3.10': [
-                'PyQt5_sip-13.6.0-cp310-cp310-linux_aarch64.whl',
-                'PyQt5-5.15.9-cp38.cp39.cp310-abi3-manylinux_2_17_aarch64.whl',
-            ],
-            '3.11': [
-                'PyQt5_sip-13.6.0-cp311-cp311-linux_aarch64.whl',
-                'PyQt5-5.15.9-cp38.cp39.cp310-abi3-manylinux_2_17_aarch64.whl',
-            ],
-            '3.12': [
-                'PyQt5_sip-13.6.0-cp312-cp312-linux_aarch64.whl',
-                'PyQt5-5.15.9-cp38.cp39.cp310-abi3-manylinux_2_17_aarch64.whl',
-            ],
-        },
     }
     log.info(f'Got version {version}')
     prt(f'Install precompiled packages for {version}')
@@ -101,6 +87,7 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
     else:
         versionKey = '4.0.0'
         log.info('Path version 4.x.y')
+        prt('No precompiled packages for this version needed')
 
     ver = f'{sys.version_info[0]}.{sys.version_info[1]}'
     for item in wheels[versionKey][ver]:
