@@ -52,7 +52,7 @@ def checking_app_start() -> bool:
         prt('Startup - no compatible virtual environment')
         prt('- needs python 3.7-3.9 for MW4 version 2.x')
         prt('- needs python 3.8-3.10 for MW4 version 3.x')
-        prt('- needs python 3.10-3.12 for MW4 version 4.x')
+        prt('- needs python 3.9-3.12 for MW4 version 4.x')
         prt('- no support for ARM7')
         prt(f'You are running {platform.python_version()}')
         prt('...closing startup script')
