@@ -81,26 +81,27 @@ def install(venv_context, beta: bool = False, version_string: str = '') -> str:
         log.error('MountWizzard4 v2.x needs python 3.7-3.9')
         return ''
 
-    if isV3 and not compatibleV3:
+    elif isV3 and not compatibleV3:
         prt('MountWizzard4 v3.x needs python 3.8-3.10')
         log.error('MountWizzard4 v3.x needs python 3.8-3.10')
         return ''
 
-    if isV4 and not compatibleV4:
+    elif isV4 and not compatibleV4:
         prt('MountWizzard4 v4.x needs python 3.10-3.12')
         log.error('MountWizzard4 v4.x needs python 3.10-3.12')
         return ''
 
-    if platform.machine() == 'aarch64':
+    elif platform.machine() == 'aarch64':
         suc = download_and_install_wheels(venv_context, version=version_app)
         if not suc:
             log.error('Failed to install precompiled wheels')
             return ''
+            
     elif platform.machine() == 'armv7':
         log.error('No support for ARM7')
         return ''
 
-    prt('MountWizzard4 is missing')
+    prt('MountWizzard4 installing')
     suc = install_app(venv_context, version=version_app, is_test=is_test)
     if not suc:
         log.error('Failed to install MountWizzard4')
