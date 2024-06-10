@@ -111,4 +111,4 @@ def setup_logging() -> None:
     logging.getLogger('requests').setLevel(logging.WARNING)
     logging.getLogger('urllib3').setLevel(logging.WARNING)
     # transfer all sys outputs to logging
-    # sys.stderr = LoggerWriter(logging.getLogger().error, 'STDERR', sys.stderr)
+    sys.stderr = LoggerWriter(logging.getLogger().error, 'STDERR', sys.stderr)
