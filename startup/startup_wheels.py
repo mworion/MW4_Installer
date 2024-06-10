@@ -88,6 +88,7 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
         versionKey = '4.0.0'
         log.info('Path version 4.x.y')
         prt('No precompiled packages for this version needed')
+        return True
 
     ver = f'{sys.version_info[0]}.{sys.version_info[1]}'
     for item in wheels[versionKey][ver]:
