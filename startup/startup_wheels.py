@@ -72,25 +72,30 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
         },
     }
     log.info(f'Got version {version}')
-    prt(f'Install precompiled packages for {version}')
+    prt(f'Check precompiled packages for {version}')
 
-    if version < Version('1.99.99'):
-        log.info('No actual supported version')
+    if version < Version('1.999'):
+        log.info('No supported version')
         prt('...no supported version')
         return False
 
-    elif Version('1.999.999') < version < Version('2.999.999'):
+    elif Version('2.999') > version > Version('1.999'):
         versionKey = '2.0.0'
         log.info('Path version 2.x.y')
 
-    elif Version('2.999.999') < version < Version('3.999.999'):
+    elif Version('3.999') > version > Version('2.999'):
         versionKey = '3.0.0'
         log.info('Path version 3.x.y')
 
-    else:
+    elif Version('4.999') > version_app > Version('3.999'):
         log.info('Path version 4.x.y')
         prt('No precompiled packages for this version needed')
         return True
+
+    else:
+        log.info('No supported version')
+        prt('...no supported version')
+        return False
 
     ver = f'{sys.version_info[0]}.{sys.version_info[1]}'
     for item in wheels[versionKey][ver]:
