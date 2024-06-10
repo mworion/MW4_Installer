@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Install on RaspberryPi 4/5 &#8212; InstallerMW4 4.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=e4742b38" />
+    <link rel="stylesheet" type="text/css" href="../_static/drawio.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <script src="../_static/documentation_options.js?v=3304f9e4"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Display configuration" href="../config/configure.html" />
+    <link rel="prev" title="Install on RaspberryPi 3" href="rpi3.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/mw4.png" alt="Logo" />
+    
+    <h1 class="logo logo-name">InstallerMW4</h1>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Install Python3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mw4.html">Install MountWizzard4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platesolvers.html">Install Plate Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi3.html">Install on RaspberryPi 3</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install on RaspberryPi 4/5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/configure.html">Display configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/commandline.html">Command line options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelogs</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="rpi3.html" title="previous chapter">Install on RaspberryPi 3</a></li>
+      <li>Next: <a href="../config/configure.html" title="next chapter">Display configuration</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="install-on-raspberrypi-4-5">
+<h1>Install on RaspberryPi 4/5<a class="headerlink" href="#install-on-raspberrypi-4-5" title="Link to this heading">¶</a></h1>
+<p>We are installing MW4 on an ubuntu 20.04.1LTS 64Bit system. In relation to the
+RPi3 it seems to be much simpler to do. Nevertheless some of the big packages will
+be compiled on your system during installation, which means this will take some
+time (hours). There is the opportunity to use precompiled packages out of the
+install scripts provided.</p>
+<p>Another big step forward is that you could use now a virtual environment for
+installing MW4.</p>
+<p>To get MW4 installed on RPi4 you will follow the instructions of Dustin Casto:</p>
+<p><a class="reference external" href="https://homenetworkguy.com/how-to/install-ubuntu-mate-20-04-lts-on-raspberry-pi-4/">https://homenetworkguy.com/how-to/install-ubuntu-mate-20-04-lts-on-raspberry-pi-4/</a></p>
+<p>to get Ubuntu Mate 20.04.1 LTS on your RPi4.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Some users experience problems with KStars/EKOS on original ubuntu-mate
+desktop. So the recommendation is to use a KDE bases desktop like kubuntu. The
+easiest way to install a desktop on top of the server installation is using:
+<a class="reference external" href="https://github.com/wimpysworld/desktopify">https://github.com/wimpysworld/desktopify</a></p>
+</div>
+<p>After you have finished the setup and got the desktop up and running, the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>should give you the following result 3.8.5: Please take care, that a python
+version 3.8.5 or later is installed.</p>
+<p>The actual Ubuntu mate 20.04.1LTS distribution comes with python 3.8.5, so
+everything should be OK. Next we have to do is to install a virtual environment
+capability, the packet manager pip and the development headers for python to be
+able to compile necessary packages:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="mf">.8</span><span class="o">-</span><span class="n">venv</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">qt5</span><span class="o">-</span><span class="n">default</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to have both packages installed as otherwise the install script or
+later does MW4 not run.</p>
+</div>
+<p>After that, please proceed with the installer script</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2024, mworion.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/install/rpi4_5.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
