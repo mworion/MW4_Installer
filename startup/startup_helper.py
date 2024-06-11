@@ -76,7 +76,7 @@ def run(command) -> bool:
 def install_basic_packages(python_string='python') -> None:
     """
     """
-    prt('...adding basic packages')
+    prt('Adding basic packages if necessary')
     command = [python_string, '-m', 'pip', 'install', 'pip', '--upgrade']
     run(command)
     command = [python_string, '-m', 'pip', 'install', 'requests', '--upgrade']
