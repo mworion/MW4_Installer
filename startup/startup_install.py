@@ -87,8 +87,8 @@ def install(venv_context, beta: bool = False, version_string: str = '') -> str:
         return ''
 
     elif isV4 and not compatibleV4:
-        prt('MountWizzard4 v4.x needs python 3.10-3.12')
-        log.error('MountWizzard4 v4.x needs python 3.10-3.12')
+        prt('MountWizzard4 v4.x needs python 3.9-3.12')
+        log.error('MountWizzard4 v4.x needs python 3.9-3.12')
         return ''
 
     elif platform.machine() == 'aarch64':
